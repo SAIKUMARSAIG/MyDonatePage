@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Hub - Share What You Can</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+<nav class="bg-blue-600 text-white shadow-lg">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+            <a href="/" class="text-2xl font-bold">DonationHub</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/" class="hover:text-blue-200">Home</a>
+                <a href="/donor" class="hover:text-blue-200">Donate</a>
+                <a href="/receiver" class="hover:text-blue-200">Receive</a>
+                <a href="#" class="hover:text-blue-200">About</a>
+                <a href="#" class="hover:text-blue-200">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden px-4 pt-2 pb-4 bg-blue-700">
+        <a href="/" class="block py-2 hover:text-blue-200">Home</a>
+        <a href="/donor" class="block py-2 hover:text-blue-200">Donate</a>
+        <a href="/receiver" class="block py-2 hover:text-blue-200">Receive</a>
+        <a href="#" class="block py-2 hover:text-blue-200">About</a>
+        <a href="#" class="block py-2 hover:text-blue-200">Contact</a>
+    </div>
+</nav>
+
+
+<section class="bg-blue-700 text-white py-16">
+    <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Share What You Can, Help Those In Need</h1>
+        <p class="text-xl mb-8">Connect donors with recipients to make a difference in your community</p>
+        <div class="flex justify-center space-x-4">
+            <a href="/donor" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition duration-300">Donate Items</a>
+            <a href="/receiver" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition duration-300">Find Donations</a>
+        </div>
+    </div>
+</section>
+
+
+<div class="flex flex-col md:flex-row items-center justify-center gap-10 max-md:px-4 my-10">
+    <!-- Left Side Image + Overlay -->
+    <div class="relative shadow-2xl shadow-indigo-600/40 rounded-2xl overflow-hidden shrink-0">
+<!--        <img class="max-w-md w-full object-cover rounded-2xl"-->
+<!--             src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=451&h=451&auto=format&fit=crop"-->
+<!--             alt="Donation Image">-->
+        <img class="max-w-md w-full object-cover rounded-2xl"
+             src="/donate.jpg"
+             alt="Donation Image">
+    </div>
+
+
+    <div class="text-sm text-slate-600 max-w-lg">
+        <h1 class="text-xl uppercase font-semibold text-slate-700">Why Donate?</h1>
+        <div class="w-24 h-[3px] rounded-full bg-gradient-to-r from-indigo-600 to-[#DDD9FF]"></div>
+        <p class="mt-8">Our donation platform helps connect generous donors with people in need. By contributing items
+            like food, clothes, or essentials, you directly make a positive impact in someone's life. </p>
+        <p class="mt-4">Every contribution counts. Together, we can build a community where no one is left behind.</p>
+        <p class="mt-4">Join hands with us and be a part of this mission of kindness and hope.</p>
+        <button
+                class="flex items-center gap-2 mt-8 hover:-translate-y-0.5 transition bg-gradient-to-r from-indigo-600 to-[#8A7DFF] py-3 px-8 rounded-full text-white">
+            <a th:href="@{/donor}">Donate Now</a>
+            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                        d="M12.53 6.53a.75.75 0 0 0 0-1.06L7.757.697a.75.75 0 1 0-1.06 1.06L10.939 6l-4.242 4.243a.75.75 0 0 0 1.06 1.06zM0 6v.75h12v-1.5H0z"
+                        fill="#fff" />
+            </svg>
+        </button>
+    </div>
+</div>
+
+
+
+
+<!-- How It Works -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center p-6">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-box-open text-blue-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">1. Donate Items</h3>
+                <p class="text-gray-600">List your unused items that are in good condition and can help others.</p>
+            </div>
+            <div class="text-center p-6">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-search text-blue-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">2. Find What You Need</h3>
+                <p class="text-gray-600">Browse available donations and request items that you need.</p>
+            </div>
+            <div class="text-center p-6">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-hands-helping text-blue-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">3. Connect & Help</h3>
+                <p class="text-gray-600">Arrange pickup and make a direct impact in your community.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Categories -->
+<section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">What Can You Donate?</h2>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition duration-300">
+                <i class="fas fa-tshirt text-4xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Clothing</h3>
+                <p class="text-gray-600">Gently used clothes for all ages and seasons</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition duration-300">
+                <i class="fas fa-utensils text-4xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Food</h3>
+                <p class="text-gray-600">Non-perishable food items and groceries</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition duration-300">
+                <i class="fas fa-couch text-4xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Furniture</h3>
+                <p class="text-gray-600">Household furniture in good condition</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition duration-300">
+                <i class="fas fa-book text-4xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Books</h3>
+                <p class="text-gray-600">Educational materials and reading books</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold mb-4">DonationHub</h3>
+                <p class="text-gray-400">Connecting donors with those in need to build stronger communities.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="/" class="text-gray-400 hover:text-white">Home</a></li>
+                    <li><a href="/donor" class="text-gray-400 hover:text-white">Donate Items</a></li>
+                    <li><a href="/receiver" class="text-gray-400 hover:text-white">Find Donations</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                <ul class="space-y-2">
+                    <li class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i> 123 Help Street, City</li>
+                    <li class="text-gray-400"><i class="fas fa-phone mr-2"></i> (123) 456-7890</li>
+                    <li class="text-gray-400"><i class="fas fa-envelope mr-2"></i> info@donationhub.org</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2023 DonationHub. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    document.getElementById('menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>
